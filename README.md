@@ -1,16 +1,73 @@
-# recipe_app_flutter
+# Recipe App Flutter
 
-A new Flutter project.
+Flutter ile geliştirilmiş mobil yemek tarifi uygulaması. MySQL veritabanı kullanarak kullanıcı kayıt/giriş, tarif yönetimi, favoriler ve puanlama özelliklerini içerir.
 
-## Getting Started
+## Özellikler
 
-This project is a starting point for a Flutter application.
+- ✅ Kullanıcı kayıt ve giriş sistemi
+- ✅ Tarif görüntüleme ve detay sayfası
+- ✅ Kategori bazlı filtreleme
+- ✅ Favorilere ekleme/çıkarma
+- ✅ Tarif puanlama sistemi
+- ✅ Kendi tariflerini ekleme/düzenleme/silme
+- ✅ Modern ve kullanıcı dostu arayüz
+- ✅ MySQL veritabanı entegrasyonu
 
-A few resources to get you started if this is your first Flutter project:
+## Teknolojiler
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter** - Mobil uygulama framework'ü
+- **MySQL** - Veritabanı
+- **Provider** - State management
+- **mysql_client** - MySQL bağlantı kütüphanesi
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Kurulum
+
+1. Projeyi klonlayın:
+```bash
+git clone https://github.com/SehmusAlts/recipe_app_flutter.git
+cd recipe_app_flutter
+```
+
+2. Bağımlılıkları yükleyin:
+```bash
+flutter pub get
+```
+
+3. MySQL veritabanını kurun:
+   - MySQL Workbench'te `database_schema.sql` dosyasını çalıştırın
+   - `lib/config/database_config.dart` dosyasındaki veritabanı bağlantı bilgilerini güncelleyin
+
+4. Uygulamayı çalıştırın:
+```bash
+flutter run
+```
+
+## Veritabanı Yapılandırması
+
+`lib/config/database_config.dart` dosyasında veritabanı bağlantı bilgilerini güncelleyin:
+
+```dart
+static const host = '10.0.2.2'; // Android emülatör için
+static const port = 3306;
+static const user = 'recipe_user';
+static const password = 'GüçlüBirŞifre';
+static const database = 'flutter_app';
+```
+
+**Not:** Android emülatör kullanıyorsanız, host olarak `10.0.2.2` kullanın. Fiziksel cihaz için bilgisayarınızın IP adresini kullanın.
+
+## Proje Yapısı
+
+```
+lib/
+├── config/          # Veritabanı yapılandırması
+├── models/          # Veri modelleri
+├── providers/       # State management
+├── screens/         # Ekranlar
+├── services/        # Veritabanı servisleri
+└── widgets/         # Yeniden kullanılabilir widget'lar
+```
+
+## Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır.
